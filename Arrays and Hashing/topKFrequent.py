@@ -46,7 +46,8 @@ def topKFrequent(nums, k):
     result = []
     if k == 0:
         return result
-    for key in reversed(counts):
+    
+    for key in reversed(range(len(nums) + 1)):
         if counter == k:
             break
         if counts[key] == 0:
