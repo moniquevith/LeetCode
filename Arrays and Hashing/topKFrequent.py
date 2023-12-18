@@ -34,26 +34,33 @@ def topKFrequent(nums, k):
     values = {}
 
     for n in range(len(nums) + 1):
-        counts[n] = 0
+        counts[n] = []
     
     for n in nums: 
         values[n] = values.get(n, 0) + 1
     
     for key in values:
-        counts[values[key]] = key
-    
-    counter = 0
+        curr_value = counts[values[key]] 
+        counts[values[key]] = curr_value + [key]
+
     result = []
     if k == 0:
         return result
     
+    counter = 0
     for key in reversed(range(len(nums) + 1)):
-        if counter == k:
-            break
-        if counts[key] == 0:
+        if counts[key] == []:
             continue
+        if len(counts[key]) == 1:
+            result.append(counts[key][0])
+            counter += 1
         else:
-            result.append(counts[key])
-        counter += 1
+            for n in counts[key]:
+                if (counter == k):
+                    break
+                result.append(n)
+                counter += 1
+        if counter == k: 
+            break
     return result
-topKFrequent([1,1,8,1,2,2], 2)
+topKFrequent([1,1,1,2,2,3], 2)
