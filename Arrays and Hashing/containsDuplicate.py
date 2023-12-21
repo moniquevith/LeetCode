@@ -31,6 +31,6 @@ def containsDuplicate(nums):
         hashset[n] = hashset.get(n, 0) + 1
         if hashset[n] > 1:
             return True
-    return False
+    return False 
 
 containsDuplicate([1,1,1,3,3,4,3,2,4,2])
