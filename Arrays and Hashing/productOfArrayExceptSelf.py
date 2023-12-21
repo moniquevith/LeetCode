@@ -21,5 +21,4 @@ def productExceptSelf(nums):
 
 # can do it via division: multiply list, divide it by current index in nums 
 
-
 productExceptSelf([1,2,3,4])
