@@ -4,36 +4,42 @@ def isValidSudoku(board):
     :rtype: bool
     """
     # check if rows have no reps 
-    row_digits = {}
-    for row in range(9):
-        for col in range(9):
-            if board[row][col] == ".":
-                continue
-            else: 
-                if board[row][col] in row_digits:
-                    print("not valid row")
-                else: 
-                    row_digits[board[row][col]] = 1
-        row_digits = {}
+    # row_digits = {}
+    # for row in range(9):
+    #     for col in range(9):
+    #         if board[row][col] == ".":
+    #             continue
+    #         else: 
+    #             if board[row][col] in row_digits:
+    #                 print("not valid row")
+    #             else: 
+    #                 row_digits[board[row][col]] = 1
+    #     row_digits = {}
 
-    # check if cols have no reps 
-    column_digits = {}
-    for col in range(9):
-        for row in range(9):
-            if board[row][col] == ".":
-                continue
-            else: 
-                if board[row][col] in column_digits:
-                    print("not valid col")
-                else: 
-                    column_digits[board[row][col]] = 1
-        column_digits = {}
+    # # check if cols have no reps 
+    # column_digits = {}
+    # for col in range(9):
+    #     for row in range(9):
+    #         if board[row][col] == ".":
+    #             continue
+    #         else: 
+    #             if board[row][col] in column_digits:
+    #                 print("not valid col")
+    #             else: 
+    #                 column_digits[board[row][col]] = 1
+    #     column_digits = {}
 
-    # check if 3x3 boxes have reps 
-    box_digits = {}
-    for row in range(9):
-        for col in range(9):
-            return
+    # # check if 3x3 boxes have reps 
+    # box_digits = {}
+    # for row in range(9):
+    #     for col in range(9):
+    #         return
+    
+    # cols = {c: set() for c in range(9)}
+    # for r in range(9):
+    #     for c in range(9):
+    #         cols[c].add(board[r][c])
+    # print(cols)
 
 board = [["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
