@@ -4,15 +4,16 @@ def maxArea(height):
     :rtype: int
     """
     max_volume = 0
-    for n in range(len(height)):
-        pointer1 = n
-        pointer2 = len(height) - 1
-        while (pointer1 < pointer2):
-            h = min(height[pointer1], height[pointer2])
-            w = pointer2 - pointer1
-            v = h*w
-            if v > max_volume:
-                max_volume = v
+    pointer1 = 0
+    pointer2 = len(height) - 1
+    while (pointer1 < pointer2):
+        h = min(height[pointer1], height[pointer2])
+        w = pointer2 - pointer1
+        v = h * w
+        max_volume = max(max_volume, v)
+        if height[pointer1] < height[pointer2]:
+            pointer1 += 1
+        else:
             pointer2 -= 1
     
     return max_volume
