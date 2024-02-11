@@ -20,9 +20,15 @@ def trap(height):
             output += v
             pointer1 = pointer2
             pointer2 += 1
-        pointer2 += 1
+        if pointer2 == (len(height) - 1): # if there are no heights that are larger, move pointers 
+            pointer1 += 1
+            pointer2 = pointer1 + 1
+        else:
+            pointer2 += 1
     print(output)
-height = [0, 1, 0, 2, 1, 0, 1, 3]
-# height = [0,1,0,2,1,0,1,3,2,1,2,1]
+# height = [0, 1, 0, 2, 1, 0, 1, 3]
+height = [0,1,0,2,1,0,1,3,2,1,2,1]
+# height = [4,2,0,3,2,5]
 # expected output = 6
+# height = [4,2,3]
 trap(height)
