@@ -34,7 +34,10 @@ def trap(height):
             for idx in range(pointer1, height_index):
                 if idx == pointer1 or idx == height_index:
                     continue
-                blocks_inbetween += height[idx]
+                elif height[idx] > max_height: # if block next to it is greater than p1, dont count the extra blocks when subtracting (find blocks between)
+                    blocks_inbetween += max_height
+                else:
+                    blocks_inbetween += height[idx]
             v = h * w - blocks_inbetween
             output += v
             pointer1 = pointer2
@@ -46,4 +49,5 @@ def trap(height):
 height = [0,1,0,2,1,0,1,3,2,1,2,1]
 # height = [4,2,0,3,2,5]
 # height = [4,2,3]
+height = [5,4,1,2]
 trap(height)
